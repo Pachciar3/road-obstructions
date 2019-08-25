@@ -1,0 +1,154 @@
+.obstruction {
+  font-size: 1rem;
+  // background-color: $primary-color;
+  border: 3px solid $primary-color;
+  border-radius: 2px;
+  margin-bottom: 20px;
+
+  &--danger {
+    border: 3px solid $danger-color;
+  }
+
+  &--danger &__head,
+  &--danger &__footer {
+    background-color: $danger-color;
+  }
+
+  &--secondary {
+    border: 3px solid $secondary-color;
+  }
+
+  &--secondary &__head,
+  &--secondary &__footer {
+    background-color: $secondary-color;
+  }
+
+  &--secondary &__info-items,
+  &--secondary &__scope {
+    color: $primary-color;
+  }
+
+  &--secondary &__localization {
+    background-color: $primary-color;
+  }
+
+  &__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    background-color: $primary-color;
+  }
+
+  &__main-title {
+    font-size: 2.5em;
+    color: #FFF;
+  }
+
+  &__localization {
+    display: inline-block;
+    font-size: 1.2em;
+    padding: 5px 10px;
+    color: #FFF;
+    background-color: $secondary-color;
+  }
+
+  &__more-info {
+    // color: #FFF;
+    padding: 5px;
+  }
+
+  &__road-name {
+    font-size: 1.8em;
+    font-weight: 700;
+  }
+
+  &__info-items {
+    display: flex;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: $secondary-color;
+  }
+
+  &__info-item {
+    margin-right: 7px;
+  }
+
+  &__description {
+    font-size: 1.4em;
+    padding: 0px 5px;
+  }
+
+  &__scope {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: $secondary-color;
+    padding: 5px;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2em;
+    background-color: $primary-color;
+    padding: 5px;
+    color: #FFF;
+  }
+
+  &__data-owner a {
+    font-weight: 700;
+    color: #FFF;
+    text-decoration: none;
+    transition: .2s opacity;
+
+    &:hover {
+      opacity: .8;
+    }
+  }
+}
+
+@media (min-width: 798px) {
+  .obstruction {
+    border-width: 5px;
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+
+    &__head {
+      padding: 7px 10px;
+
+    }
+
+    &__info-items {
+      margin-top: 2px;
+    }
+
+    &__more-info {
+      padding: 10px;
+    }
+
+    &__description {
+      // font-size: 1.4em;
+      padding: 0px 10px;
+      line-height: 1.45;
+      // letter-spacing: 1.1px;
+    }
+
+    &__scope {
+      padding: 10px;
+    }
+
+    &__localization {
+      font-size: 1.4rem;
+      // padding: 7px 12px;
+    }
+
+    &__footer {
+
+      font-size: 1.2em;
+
+      padding: 10px;
+
+    }
+
+  }
+}

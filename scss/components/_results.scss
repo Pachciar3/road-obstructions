@@ -1,0 +1,9 @@
+.results {
+  padding: 20px 10px;
+
+  &__error {
+    color: $danger-color;
+    font-size: 2rem;
+    text-align: center;
+  }
+}

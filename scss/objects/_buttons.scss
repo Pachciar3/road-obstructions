@@ -1,0 +1,67 @@
+.btn {
+  background-color: $secondary-color;
+  border: 3px solid $secondary-color;
+  color: #FFF;
+  font-family: $font;
+  font-size: 1.6rem;
+  padding: 5px 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  opacity: 1;
+  transition: linear .2s;
+
+  svg {
+    fill: #FFF;
+  }
+
+  &--primary {
+    border: 3px solid $primary-color;
+    background-color: $primary-color;
+    font-weight: 600;
+
+    &:hover {
+      opacity: .9;
+    }
+  }
+
+  &--road {
+    border: 3px solid $road-color;
+    background-color: $road-color;
+    font-weight: 600;
+  }
+
+  &.is-active {
+    background-color: $primary-color;
+    border-color: $primary-color;
+  }
+
+  &:not(.is-active):hover {
+    opacity: .8;
+  }
+
+  &.disable,
+  &.disable:hover {
+    opacity: .3;
+    cursor: no-drop;
+  }
+
+  &--100 {
+    width: 100%;
+  }
+
+  &--circle {
+    border-radius: 50%;
+    padding: 5px 5px;
+  }
+
+  &--small {
+    font-size: 1.4rem;
+    padding: 3px 7px;
+  }
+
+  &--small.btn--circle {
+    padding: 3px 3px
+  }
+}

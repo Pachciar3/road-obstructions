@@ -1,0 +1,17 @@
+.footer {
+  background-color: #69100F;
+  color: #FFF;
+  font-size: 1.8rem;
+  padding: 10px 5px;
+  text-align: center;
+
+  &__link {
+    color: #FFF;
+    text-decoration: none;
+    transition: color linear .2s;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}

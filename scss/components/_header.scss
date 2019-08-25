@@ -1,0 +1,22 @@
+.header {
+  padding: 10px 5px;
+  background-color: $primary-color;
+
+  &__title {
+    text-align: center;
+    font-size: 3rem;
+    color: #FFF;
+    font-weight: 600;
+    letter-spacing: .8px;
+  }
+}
+
+@media (min-width: 798px) {
+  .header {
+    padding: 15px 10px;
+
+    &__title {
+      font-size: 4rem;
+    }
+  }
+}

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Informacje drogowe</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap&subset=latin-ext"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.min.css" />
+</head>
+
+<body>
+  <div class="container">
+    <header class="header">
+      <h1 class="header__title">Utrudnienia drogowe</h1>
+    </header>
+    <main class="main">
+      <div class="form" id="search_form">
+        <div class="search-field" id="search_field">
+          <label for="search_input" class="search-field__label" id="search_label">Wpisz numer drogi</label>
+          <input type="search" id="search_input" class="search-field__input" autocomplete="off" />
+        </div>
+        <div class="form__choosed-road is-hide" id="choosed-road">12</div>
+        <div class="dropdown-choose">
+          <button class="dropdown-choose__btn dropdown-choose__btn--primary" id="voivodeship-btn">
+            <span class="dropdown-choose__btn-txt">
+              Wszystkie
+            </span>
+            <span class="dropdown-choose__btn-ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                viewBox="0 0 24 24">
+                <path d="M7 10l5 5 5-5z" />
+                <path d="M0 0h24v24H0z" fill="none" /></svg></span>
+          </button>
+          <ul class="dropdown-choose__list is-hide" id="voivodeship-list">
+            <li class="dropdown-choose__item">
+              <button class="dropdown-choose__btn dropdown-choose__btn--nested is-active" data-value="all">
+                Wszystkie
+              </button>
+            </li>
+            <li class="dropdown-choose__item">
+              <button class="dropdown-choose__btn dropdown-choose__btn--nested" data-value="dolnoslaskie">
+                Dolnośląskie
+              </button>
+            </li>
+            <li class="dropdown-choose__item">
+              <button class="dropdown-choose__btn dropdown-choose__btn--nested" data-value="kujawsko-pomorskie">
+                Kujawsko-pomorskie
+              </button>
+            </li>
+            <li class="dropdown-choose__item">
+              <button class="dropdown-choose__btn dropdown-choose__btn--nested" data-value="lubelskie">
+                Lubelskie
+              </button>
+            </li>
+            <li class="dropdown-choose__item">
+              <button class="dropdown-choose__btn dropdown-choose__btn--nested" data-value="lubuskie">
+                Lubuskie
+              </button>
+            </li>
+            <li class="dropdown-choose__item">
+              <button class="dropdown-choose__btn dropdown-choose__btn--nested" data-value="lodzkie">
+                Łódzkie
+              </button>
+            </li>
+            <li class="dropdown-choose__item">
+              <button class="dropdown-choose__btn dropdown-choose__btn--nested" data-value="malopolskie">
+                Małopolskie
+              </button>
+            </li>
+            <li class="dropdown-choose__item">
+              <button class="dropdown-choose__btn dropdown-choose__btn--nested" data-value="mazowieckie">
+                Mazowieckie
+              </button>
+            </li>
+            <li class="dropdown-choose__item">
+              <button class="dropdown-choose__btn dropdown-choose__btn--nested" data-value="opolskie">
+                Opolskie
+              </button>
+            </li>
+            <li class="dropdown-choose__item">
+              <button class="dropdown-choose__btn dropdown-choose__btn--nested" data-value="podkarpackie">
+                Podkarpackie
+              </button>
+            </li>
+            <li class="dropdown-choose__item">
+              <button class="dropdown-choose__btn dropdown-choose__btn--nested" data-value="podlaskie">
+                Podlaskie
+              </button>
+            </li>
+            <li class="dropdown-choose__item">
+              <button class="dropdown-choose__btn dropdown-choose__btn--nested" data-value="pomorskie">
+                Pomorskie
+              </button>
+            </li>
+            <li class="dropdown-choose__item">
+              <button class="dropdown-choose__btn dropdown-choose__btn--nested" data-value="slaskie">
+                Śląskie
+              </button>
+            </li>
+            <li class="dropdown-choose__item">
+              <button class="dropdown-choose__btn dropdown-choose__btn--nested" data-value="swietokrzyskie">
+                Świętokrzyskie
+              </button>
+            </li>
+            <li class="dropdown-choose__item">
+              <button class="dropdown-choose__btn dropdown-choose__btn--nested" data-value="warminsko-mazurskie">
+                Warmińsko-mazurskie
+              </button>
+            </li>
+            <li class="dropdown-choose__item">
+              <button class="dropdown-choose__btn dropdown-choose__btn--nested" data-value="wielkopolskie">
+                Wielkopolskie
+              </button>
+            </li>
+            <li class="dropdown-choose__item">
+              <button class="dropdown-choose__btn dropdown-choose__btn--nested" data-value="zachodniopomorskie">
+                Zachodniopomorskie
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div class="form__result search-result">
+          <header class="search-result__header">
+            <div class="search-result__link-btns">
+              <button class="btn disable" id="search_phrase_btn" disabled>Szukaj po frazie: </button>
+              <span class="search-result__divider search-result__divider--horizontal">lub</span>
+              <button class="btn" id="search_without_phrase_btn">Szukaj bez frazy </button>
+            </div>
+            <button class="btn btn--primary btn--circle btn--small" aria-label="Zamknij" id="close_results"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path
+                  d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+                <path d="M0 0h24v24H0z" fill="none" /></svg></button>
+          </header>
+          <span class="search-result__divider">lub</span>
+          <h3 class=" search-result__list-name">Wybierz numer drogi</h3>
+          <ul class="search-result__list" id="search_roads_container">
+          </ul>
+        </div>
+      </div>
+      <div class="content">
+        <!-- Support for RSO database is not finished-->
+        <!-- <ul class="sort">
+          <li class="sort__option">
+            <button class="sort__btn" title="Regionalny System Ostrzegania" data-name="rso">
+              RSO
+            </button>
+          </li>
+          <li class="sort__option">
+            <button class="sort__btn active" title="Generalna Dyrekcja Dróg Krajowych i Autostrad" data-name="gddkia">
+              GDDKiA
+            </button>
+          </li>
+        </ul> -->
+        <div class="results" id="results"></div>
+      </div>
+    </main>
+    <footer class="footer">
+      Stworzone przez <a href="" class="footer__link">Dawida Pachciarka</a>
+    </footer>
+  </div>
+  <script src="js/app.js"></script>
+</body>
+
+</html>
